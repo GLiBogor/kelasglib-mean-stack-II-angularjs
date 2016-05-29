@@ -9,9 +9,10 @@ var app = angular.module('App', ['ui.router'])
   })
   .state('About', {
     url : '/about',
-    templateProvider : function($templateCache) {
-      return $templateCache.get('about.html');
-    }
+    template : '<div>Hello</div>' 
+    /* function($templateCache) { */
+    /*   return $templateCache.get('about.html'); */
+    /* } */
   })
 })
 .controller('MainController', function($rootScope, $scope){

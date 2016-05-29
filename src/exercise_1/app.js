@@ -1,4 +1,5 @@
-var app = angular.module('App', [])
+var app = angular.module('Cobacoba', [])
 .controller('AppController', function($scope){
-  $scope.hello = "Hello world dari $scope";
+  $scope.hello = "Hai";
+  $scope.name = "Ary";
 })

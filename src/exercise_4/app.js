@@ -18,9 +18,23 @@ var app = angular.module('App', ['ui.router'])
   $scope.title = 'Main Page';
 })
 .controller('TodoController', function($rootScope, $scope){
-  $scope.list = [];
+  $scope.list = []; 
+  // $scope.list = ['ary', 'dendy']
+  $scope.listObj = [
+    {
+      nama : 'Ary',
+      usia : 20
+    },
+    {
+      nama : 'Irwan',
+      usia : 21
+    },
+  ]
   $scope.title = 'Todo List';
   $scope.add = function(data) {
+    if (!data) {
+      return alert('Mana sih datanya');
+    }
     $scope.list.push(data);
     $scope.new = '';
   }
@@ -29,5 +43,5 @@ var app = angular.module('App', ['ui.router'])
   }
 })
 .run(['$state', function($state){
-  $state.go('Main');
+  $state.go('Todo');
 }])

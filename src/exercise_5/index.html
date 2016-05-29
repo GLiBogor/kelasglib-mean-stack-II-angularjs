@@ -17,10 +17,11 @@
 <script type="text/ng-template" id="main.html">
   <div ng-controller="MainController">
     <h2>{{title}}</h2>
+    <button ng-click="reload()">Muat ulang</button>
     <ul>
       <li ng-repeat="item in list track by $index">
-        <span style="cursor:pointer;">{{item.name}}</span>
-        <span style="cursor:pointer;" ng-click="delete($index)">[x]</span>
+        <span style="cursor:pointer;" ng-click="detail(item._id)">{{item.name}}</span>
+        <span style="cursor:pointer;" ng-click="delete(item._id)">[x]</span>
       </li>
     </ul>
   </div>
@@ -32,5 +33,13 @@
     Age : <input type="number" ng-model="data.age"><br>
     Role : <input type="text" ng-model="data.role"><br>
     <button ng-click="save(data);">Save</button>
+  </div>
+</script>
+<script type="text/ng-template" id="detail.html">
+  <div ng-controller="DetailController">
+    <h2>{{title}}</h2>
+    Name : {{data.name}}<br>
+    Age : {{data.age}}<br>
+    Role : {{data.role}}<br>
   </div>
 </script>
